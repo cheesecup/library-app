@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/base :: common_header(~{::title}, ~{::link})">
+  <meta charset="UTF-8">
+  <title>메인페이지</title>
+
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{#}">
+</head>
+<body>
+<div th:replace="~{layout/header :: header}"></div>
+
+<div class="content_container">
+<!--  <div th:replace="~{user/saveUserForm :: save_user_form}"></div>-->
+  <div th:replace="~{user/updateUserForm :: update_user_form}"></div>
+  <div th:replace="~{user/deleteUserForm :: delete_user_form}"></div>
+
+  <div class="user_search_container">
+    <h1>회원정보 검색</h1>
+    <form class="search_form">
+      <div class="search_form_content">
+
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

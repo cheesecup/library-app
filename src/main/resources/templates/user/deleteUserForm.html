@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="delete_user_form" class="delete_user_container">
+  <h1 style="margin-top: 0px;">회원정보 삭제</h1>
+  <form class="delete_form" th:action="@{/user}" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <div class="delete_form_content">
+      <div class="input_id">
+        <label for="id">ID</label>
+        <br>
+        <input type="text" class="id" id="id" name="id" placeholder="삭제할 ID를 입력하세요.">
+      </div>
+
+      <div class="input_name">
+        <label for="name">이름</label>
+        <br>
+        <input type="text" class="name" id="name" name="name" placeholder="삭제할 이름을 입력하세요.">
+      </div>
+    </div>
+
+    <button type="submit">삭제하기</button>
+  </form>
+</div>
+</body>
+</html>

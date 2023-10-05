@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/base :: common_header(~{::title}, ~{::link})">
+  <meta charset="UTF-8">
+  <title>메인페이지</title>
+
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{../css/loginUserForm.css}">
+</head>
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <form class="login_form" method="post" action="/user/login" th:object="${userLoginRequest}">
+      <h1 class="h3 mb-3 fw-normal">로그인</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" name="userid" th:field="*{userid}" placeholder="아이디를 입력하세요">
+        <label for="floatingInput">ID</label>
+        <div th:errors="*{userid}"></div>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" name="pwd" th:field="*{pwd}" placeholder="패스워드를 입력하세요">
+        <label for="floatingPassword">Password</label>
+        <div th:errors="*{pwd}"></div>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+    </form>
+  </main>
+</body>
+</html>

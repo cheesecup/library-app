@@ -1,0 +1,30 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: gray;
+    margin: 0;
+}
+
+.navbar_content {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar_content li {
+    float: left;
+}
+
+.navbar_content a {
+    text-decoration-line: none;
+    color: black;
+    display: block;
+    padding: 12px;
+    font-size: larger;
+    font-weight: bolder;
+    background-color: gray;
+}

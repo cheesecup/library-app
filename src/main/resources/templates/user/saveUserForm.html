@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="save_user_form" class="save_user_container">
+  <h1 style="margin-top: 0px;">회원정보 저장</h1>
+  <form class="save_form" method="post" action="/user/create" th:object="${userCreateRequest}">
+    <div class="save_form_content">
+      <div class="input_userid">
+        <label for="userid">ID</label>
+        <br>
+        <input type="text" id="userid" th:field="*{userid}" placeholder="ID를 입력하세요.">
+        <div th:errors="*{userid}"></div>
+      </div>
+
+      <div class="input_pwd">
+        <label for="pwd">비밀번호</label>
+        <br>
+        <input type="password" id="pwd" th:field="*{pwd}" placeholder="비밀번호를 입력하세요.">
+        <div th:errors="*{pwd}"></div>
+      </div>
+
+      <div class="input_name">
+        <label for="name">이름</label>
+        <br>
+        <input type="text" class="name" id="name" name="name" placeholder="이름을 입력하세요.">
+      </div>
+
+      <div class="input_age">
+        <label for="age">나이</label>
+        <br>
+        <input type="text" class="age" id="age" name="age" placeholder="나이를 입력하세요.">
+      </div>
+    </div>
+
+    <button type="submit">저장하기</button>
+  </form>
+</div>
+</body>
+</html>
