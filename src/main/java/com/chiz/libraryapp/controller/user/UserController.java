@@ -29,14 +29,14 @@ public class UserController {
     @GetMapping("/user/login")
     public String loginUserForm(Model model) {
         model.addAttribute("userLoginRequest", new UserLoginRequest());
-        return "/user/loginUserForm";
+        return "user/loginUserForm";
     }
 
     //로그인
     @PostMapping("/user/login")
     public String loginUser(@Valid @ModelAttribute("userLoginRequest") UserLoginRequest request, BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
-            return "/user/loginUserForm";
+            return "user/loginUserForm";
         }
 
         return "redirect:/";
@@ -46,14 +46,14 @@ public class UserController {
     @GetMapping("/user/create")
     public String saveUserForm(Model model) {
         model.addAttribute("userCreateRequest", new UserCreateRequest());
-        return "/user/saveUserForm";
+        return "user/saveUserForm";
     }
 
     //회원가입
     @PostMapping("/user/create")
     public String saveUser(@Valid @ModelAttribute("userCreateRequest") UserCreateRequest request, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "/user/saveUserForm";
+            return "user/saveUserForm";
         }
         userService.saveUser(request);
 
@@ -66,7 +66,7 @@ public class UserController {
         List<UserResponse> users = userService.getUsers();
         model.addAttribute("users", users);
 
-        return "/user/userList";
+        return "user/userList";
     }
 
     //유저 정보 수정
