@@ -49,4 +49,4 @@ spring:
         show_sql: true
 
   thymeleaf:
-    prefix: classpath:/templates
+    prefix: classpath:/templates/
